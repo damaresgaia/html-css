@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Meu primeiro formulário</h1>
-    <form action="cadastro.php" autocomplete="off"> <!-- action="" e botão de submit para enviar os dados de um formulário -->
+    <form action="cadastro.php" method="post" autocomplete="off"> <!-- action="" e botão de submit para enviar os dados de um formulário -->
         <p><label for="inome">Nome:</label> 
             <input type="text" name="nome" id="inome"></p> <!--não existe uma ligação entre o nome e a caixa de preenchimento, o que dificulta para os mecanismos de busca-->
             <!-- para linguagem PHP funcionar direito, eu preciso que todo input (todo objeto de entrada) tenha um NAME; Então, NAME é mais útil para HTML e PHP; Para linguagens como JavaScript, o ID é mais importante-->
@@ -20,6 +20,13 @@
             <input type="text" name="sobrenome" id="isobrenome"></p>
         <p><input type="submit" value="Enviar"></p>
         <!--não se faz formulário sem relacionar o label ao seu input ao seu controle seu elemento; porque caso contrário, dificulta o trabalho dos mecanismos de busca; quando se cria um label, se cria uma área maior de sensibilidade para o usuário  digitar o formulário-->
+        <!--No HTML, existem dois métodos para envio de formulário: GET (método padrão) e POST; post esconde da URL, mas não protege os dados do usuário; para proteger os dados do usuário, é necessário usar HTTPS-->
+        <!--Utiliza-se o método GET quando seus dados não forem sensíveis;
+            se você quiser que o link (URL) seja compartilhável, usa-se GET.
+        -->
+        <!-- quando você envia dados por Get, você só pode enviar até 3 mil bytes (aproximadamente 3 mil letras)-->
+        <!-- envios de fotos e arquivos, não se usa GET-->
+        <!-- não tem diferença de velocidade de envio entre Get e Post -->
     </form>
 </body>
 </html>
